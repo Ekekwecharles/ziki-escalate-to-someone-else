@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+/* Ziki's tokens, copied from emerjent/ziki app/globals.css + theme-brand.css (light theme),
+   so every class used here is the same class Ziki already ships. */
+:root {
+  --background: #f5f7fc;
+  --foreground: #15121f;
+  --card: #ffffff;
+  color-scheme: light;
+
+  --zk-bg: #f5f7fc;
+  --zk-surface: #ffffff;
+  --zk-text: #15121f;
+  --zk-text2: #3e4a63;
+  --zk-muted: #5f6577;
+  --zk-border: #e3e8f2;
+  --zk-divider: #eef1f7;
+  --zk-tint: #eaf2fe;
+  --zk-chip: #f0f2f7;
+  --zk-seg: #eef1f6;
+  --zk-accent: #1f5fd9;
+  --zk-ok-bg: #e3f6ec;
+  --zk-ok-fg: #146c43;
+  --zk-bad-bg: #fde8e4;
+  --zk-bad-fg: #a3261a;
+  --zk-bad-bd: #f4b3a8;
+  --zk-bad-soft: #fff4f2;
+  --zk-warn-bg: #fdf3d7;
+  --zk-warn-fg: #7a4e00;
+  --zk-warn-bd: #f0cd72;
+  --zk-info-bg: #e7f0ff;
+  --zk-info-fg: #1d4fb8;
+  --font-inter: "Inter";
+  --font-geist-mono: "Geist Mono";
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-zk-bg: var(--zk-bg);
+  --color-zk-surface: var(--zk-surface);
+  --color-zk-text: var(--zk-text);
+  --color-zk-text2: var(--zk-text2);
+  --color-zk-muted: var(--zk-muted);
+  --color-zk-border: var(--zk-border);
+  --color-zk-divider: var(--zk-divider);
+  --color-zk-tint: var(--zk-tint);
+  --color-zk-chip: var(--zk-chip);
+  --color-zk-seg: var(--zk-seg);
+  --color-zk-accent: var(--zk-accent);
+  --color-zk-ok-bg: var(--zk-ok-bg);
+  --color-zk-ok-fg: var(--zk-ok-fg);
+  --color-zk-bad-bg: var(--zk-bad-bg);
+  --color-zk-bad-fg: var(--zk-bad-fg);
+  --color-zk-bad-bd: var(--zk-bad-bd);
+  --color-zk-bad-soft: var(--zk-bad-soft);
+  --color-zk-warn-bg: var(--zk-warn-bg);
+  --color-zk-warn-fg: var(--zk-warn-fg);
+  --color-zk-warn-bd: var(--zk-warn-bd);
+  --color-zk-info-bg: var(--zk-info-bg);
+  --color-zk-info-fg: var(--zk-info-fg);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* theme-brand.css: teal, violet and purple are re-seeded onto Ziki's Electric Blue ramp. */
+:root {
+  --color-teal-50: #edf3fe; --color-teal-100: #dbe7fd; --color-teal-200: #bccffb; --color-teal-300: #95b5f9;
+  --color-teal-400: #679bf8; --color-teal-500: #3978f6; --color-teal-600: #2a63d8; --color-teal-700: #2756b8;
+  --color-teal-800: #1d4695; --color-teal-900: #16356f; --color-teal-950: #0f2549;
+  --color-violet-50: #edf3fe; --color-violet-100: #dbe7fd; --color-violet-200: #bccffb; --color-violet-300: #95b5f9;
+  --color-violet-400: #679bf8; --color-violet-500: #3978f6; --color-violet-600: #2a63d8; --color-violet-700: #2756b8;
+  --color-violet-800: #1d4695; --color-violet-900: #16356f; --color-violet-950: #0f2549;
+}
+
+/* Every clickable control shows the hand cursor. */
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]),
+[role="menuitem"],
+[role="radio"],
+a[href] {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+
+@theme {
+  --color-deep-ocean: #0b1733;
+  --color-electric-blue: #3978f6;
+  --color-electric-blue-strong: #2e6fef;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@keyframes zk-pop {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+.zk-pop { animation: zk-pop 220ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+@media (prefers-reduced-motion: reduce) {
+  .zk-pop { animation: none; }
+}
